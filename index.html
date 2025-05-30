@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sandy & Nenden</title>
+    <!-- Link ke Bootstrap CSS (hanya satu) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- lightbox -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <!-- Link ke Bootstrap Icons (hanya satu) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- AOS (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body class="no-scroll">
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+      <div class="text-open">Open</div>
+      <div class="text-invitation">INVITATION</div>
+      <div class="text-wait">Please Wait</div>
+
+      <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <div class="progress-text" id="progress-text">1%</div>
+    </div>
+
+    <div id="main-content" style="display: none">
+      <section
+        id="hero"
+        class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white"
+      >
+        <main
+          class="position-absolute start-50 translate-middle-x mb-0"
+          style="bottom: 100px"
+        >
+          <h1 style="white-space: nowrap">Sandy & Nenden</h1>
+          <h4>Kepada Yth.</h4>
+          <h4><span>Bapak/Ibu/Saudara/i,</span></h4>
+          <!-- Tombol undangan -->
+          <!-- Tombol kecil dan benar-benar di tengah -->
+          <div style="margin-top: 1.5rem">
+            <button
+              id="bukaUndanganBtn"
+              class="invitation-button"
+              onclick="enableScroll()"
+            >
+              <i class="bi bi-envelope-open"></i>
+              Buka Undangan
+            </button>
+          </div>
+        </main>
+      </section>
+      <section id="home" class="home">
+        <!-- Judul di atas -->
+        <div class="judul-wrapper">
+          <h class="judul-kecil">The Wedding of</h>
+          <h1 class="judul-utama">Sandy & Nenden</h1>
+          <h2 class="tanggal">Minggu, 15 Juni 2025</h2>
+        </div>
+
+        <!-- Background video -->
+        <div class="sliding-background">
+          <div class="slide-track">
+            <img src="img/h1.jpg" alt="slide1" />
+            <img src="img/h2.jpg" alt="slide2" />
+            <img src="img/h3.jpg" alt="slide3" />
+            <img src="img/h4.jpg" alt="slide4" />
+
+            <img src="img/h1.jpg" alt="slide1" />
+            <img src="img/h2.jpg" alt="slide2" />
+            <img src="img/h3.jpg" alt="slide3" />
+            <img src="img/h4.jpg" alt="slide4" />
+          </div>
+        </div>
+
+        <div class="countdown-wrapper">
+          <h1>COUNTDOWN TIMER</h1>
+          <div class="countdown">
+            <div class="box">
+              <div class="time" id="days">0</div>
+              <div class="label">Hari</div>
+            </div>
+            <div class="box">
+              <div class="time" id="hours">0</div>
+              <div class="label">Jam</div>
+            </div>
+            <div class="box">
+              <div class="time" id="minutes">0</div>
+              <div class="label">Menit</div>
+            </div>
+            <div class="box">
+              <div class="time" id="seconds">0</div>
+              <div class="label">Detik</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sticky Navbar -->
+      <!-- Sticky Navbar -->
+      <nav class="navbar">
+        <div class="navbar-container">
+          <h1 class="navbar-title">S&N WEDDING</h1>
+          <button class="save-date-btn">
+            <a
+              href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Acara+Pernikahan+S%26N&dates=20250615T090000/20250615T110000&details=Kami+menikah%21+Datang+ya&location=Gedung+ABC&sf=true&output=xml"
+              target="_blank"
+            >
+              <i class="fa fa-calendar"></i> Save The Date
+            </a>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Ayat Section -->
+      <section class="ayat-section">
+        <h2 class="ayat-title">- AR-RUM : 21 -</h2>
+        <p class="ayat-text">
+          "Dan di antara ayat-ayat-Nya ialah Dia menciptakan untukmu istri-istri
+          dari jenismu sendiri, supaya kamu merasa nyaman kepadanya, dan
+          dijadikan-Nya di antaramu mawadah dan rahmah. Sesungguhnya pada yang
+          demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir"
+        </p>
+      </section>
+      <section>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="img/s1.jpg" /></div>
+            <div class="swiper-slide"><img src="img/s2.jpg" /></div>
+            <div class="swiper-slide"><img src="img/s3.jpg" /></div>
+            <div class="swiper-slide"><img src="img/s4.jpg" /></div>
+
+            <!-- Duplikat untuk seamless loop -->
+            <div class="swiper-slide"><img src="img/s1.jpg" /></div>
+            <div class="swiper-slide"><img src="img/s2.jpg" /></div>
+            <div class="swiper-slide"><img src="img/s3.jpg" /></div>
+            <div class="swiper-slide"><img src="img/s4.jpg" /></div>
+
+            <div class="swiper-slide"><img src="img/s1.jpg" /></div>
+            <div class="swiper-slide"><img src="img/s2.jpg" /></div>
+            <div class="swiper-slide"><img src="img/s3.jpg" /></div>
+            <div class="swiper-slide"><img src="img/s4.jpg" /></div>
+
+            <div class="swiper-slide"><img src="img/s1.jpg" /></div>
+            <div class="swiper-slide"><img src="img/s2.jpg" /></div>
+            <div class="swiper-slide"><img src="img/s3.jpg" /></div>
+            <div class="swiper-slide"><img src="img/s4.jpg" /></div>
+
+            <div class="swiper-slide"><img src="img/s1.jpg" /></div>
+            <div class="swiper-slide"><img src="img/s2.jpg" /></div>
+            <div class="swiper-slide"><img src="img/s3.jpg" /></div>
+            <div class="swiper-slide"><img src="img/s4.jpg" /></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- THE BRIDE -->
+      <section class="bride-groom-section">
+        <h2 class="bride-groom-title">
+          <div>BRIDE</div>
+          <div class="gold">& GROOM</div>
+        </h2>
+      </section>
+
+      <section>
+        <div class="slide fade-in" data-aos="fade-up">
+          <img src="img/nenden.jpg" />
+          <div class="slide-caption">
+            <span class="role">THE BRIDE</span>
+            <h2>NENDEN<br />NURJANAH</h2>
+            <p>Putri Ke Lima dari Bapak H. Rohim<br />& Ibu Imas (Almh)</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- THE GROOM -->
+      <section class="bride-groom-section">
+        <h2 class="bride-groom-title">
+          <div>ROMANTIC</div>
+          <div class="gold">PARTNER</div>
+        </h2>
+      </section>
+
+      <section>
+        <div class="slide fade-in" data-aos="fade-up">
+          <img src="img/sandy.jpg" />
+          <div class="slide-caption">
+            <span class="role">THE GROOM</span>
+            <h2>SANDY FAISAL<br />HARDIANA S.Ak</h2>
+            <p>
+              Putra pertama dari Bapak Dedi Suryanto<br />& Ibu Eli Jubaedah A.
+              md
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bride-groom-section">
+        <h2 class="bride-groom-title">
+          <div>WEDDING</div>
+          <div class="gold"><span></span> EVENT</div>
+        </h2>
+      </section>
+
+      <div class="main-background">
+        <!-- Akad Section -->
+        <section class="card-overlay">
+          <div class="akad-content">
+            <div class="icon-ring">💍</div>
+            <h2 class="akad-title">Akad Nikah</h2>
+
+            <div class="akad-date">
+              <div class="akad-part">Juni</div>
+              <div class="akad-center">
+                <div class="akad-day">Minggu</div>
+                <div class="akad-number">15</div>
+              </div>
+              <div class="akad-part">2025</div>
+            </div>
+
+            <p class="akad-time">Pukul 09:00 WIB - 11:00 WIB</p>
+
+            <div class="akad-location">
+              <p>Bertempat di:</p>
+              <strong>Kediaman Mempelai Wanita</strong><br />
+              Kp. Ciakar Babakan, Desa Mekarjaya,<br />
+              Kec. Bayongbong, Kab. Garut<br />
+              Jawa Barat
+            </div>
+
+            <a
+              href="https://maps.app.goo.gl/TtLHBzKVQhSEbiKz6"
+              target="_blank"
+              class="maps-button"
+              >Google Maps</a
+            >
+          </div>
+        </section>
+        <section class="card-overlay">
+          <div class="akad-content">
+            <div class="icon-ring">💞</div>
+            <h2 class="akad-title">Resepsi</h2>
+
+            <div class="akad-date">
+              <div class="akad-part">Juni</div>
+              <div class="akad-center">
+                <div class="akad-day">Minggu</div>
+                <div class="akad-number">15</div>
+              </div>
+              <div class="akad-part">2025</div>
+            </div>
+
+            <p class="akad-time">Pukul 11:00 - selesai</p>
+
+            <div class="akad-location">
+              <p>Bertempat di:</p>
+              <strong>Kediaman Mempelai Wanita</strong><br />
+              Kp. Ciakar Babakan, Desa Mekarjaya,<br />
+              Kec. Bayongbong, Kab. Garut<br />
+              Jawa Barat
+            </div>
+
+            <a
+              href="https://maps.app.goo.gl/TtLHBzKVQhSEbiKz6"
+              target="_blank"
+              class="maps-button"
+              >Google Maps</a
+            >
+          </div>
+        </section>
+
+        <!-- Nanti tambahkan di sini: <section class="card-overlay"> untuk Resepsi -->
+      </div>
+
+      <!-- Bride & Groom Section -->
+      <section class="bride-groom-section">
+        <h2 class="bride-groom-title">
+          <div>ONE STEP</div>
+          <div class="gold"><span></span>CLOSER</div>
+        </h2>
+      </section>
+
+      <!-- gallery -->
+      <div class="gallery-background">
+        <section class="text-white py-10">
+          <div class="container mx-auto px-4">
+            <!-- Judul Galeri -->
+            <div class="gallery-header">
+              <div class="quote-icon">“</div>
+              <div class="text-wrapper">
+                <span class="gallery-title"
+                  >Our <br /><strong>Gallery</strong></span
+                >
+                <div class="line"></div>
+              </div>
+            </div>
+
+            <!-- Grid Galeri -->
+
+            <div class="masonry-gallery">
+              <img
+                src="img/g1.jpg"
+                alt="Sandy & Nenden - Foto 1"
+                class="gallery-img fade-in"
+              />
+              <img
+                src="img/g2.jpg"
+                alt="Sandy & Nenden - Foto 1"
+                class="gallery-img fade-in"
+              />
+              <img
+                src="img/g3.jpg"
+                alt="Sandy & Nenden - Foto 1"
+                class="gallery-img fade-in"
+              />
+              <img
+                src="img/g4.jpg"
+                alt="Sandy & Nenden - Foto 1"
+                class="gallery-img fade-in"
+              />
+              <img
+                src="img/g5.jpg"
+                alt="Sandy & Nenden - Foto 1"
+                class="gallery-img fade-in"
+              />
+              <img
+                src="img/g6.jpg"
+                alt="Sandy & Nenden - Foto 1"
+                class="gallery-img fade-in"
+              />
+              <img
+                src="img/g7.jpg"
+                alt="Sandy & Nenden - Foto 1"
+                class="gallery-img fade-in"
+              />
+              <img
+                src="img/g8.jpg"
+                alt="Sandy & Nenden - Foto 1"
+                class="gallery-img fade-in"
+              />
+              <img
+                src="img/g9.jpg"
+                alt="Sandy & Nenden - Foto 1"
+                class="gallery-img fade-in"
+              />
+              <img
+                src="img/g10.jpg"
+                alt="Sandy & Nenden - Foto 1"
+                class="gallery-img fade-in"
+              />
+              <img
+                src="img/g11.jpg"
+                alt="Sandy & Nenden - Foto 1"
+                class="gallery-img fade-in"
+              />
+            </div>
+
+            <!-- Lightbox -->
+            <div id="lightbox" class="lightbox">
+              <span class="close">&times;</span>
+              <img class="lightbox-content" id="lightbox-img" />
+              <div class="lightbox-caption" id="lightbox-caption"></div>
+              <div class="navigation-overlay">
+                <button id="prev" class="nav-button">&lt;</button>
+                <!-- Tombol prev -->
+                <button id="next" class="nav-button">&gt;</button>
+                <!-- Tombol next -->
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- our jurney -->
+        <section class="our-jurney">
+          <div class="jurney-header">
+            <div class="jurney-text-wrapper">
+              <span class="jurney-title"
+                >Our <br /><strong>Journey</strong></span
+              >
+              <div class="line jurney-line"></div>
+            </div>
+            <div class="jurney-icon">“</div>
+          </div>
+          <div class="jurney-overlay">
+            <div class="year-vertical">2020</div>
+            <img src="img/j1.jpg" alt="Our First Meet" class="timeline-image" />
+            <div class="text-content">
+              <h3>Our First Meet</h3>
+              <p class="date">April, 2020</p>
+              <p>
+                Cerita kisah kami dimulai pada 27 April 2020 bertepatan dengan
+                bulan ramadhan pada tahun itu,hingga kita sepakat untuk menjalin
+                hubungan ini
+              </p>
+            </div>
+          </div>
+          <div class="jurney-overlay">
+            <img
+              src="img/j2.jpg"
+              alt="Special Moment"
+              class="timeline-image-left"
+            />
+            <div class="text-content-left">
+              <h3>Special Moment</h3>
+              <p class="date">Desember, 2023</p>
+              <p>
+                Pada tanggal 9 Desember 2023, kami mengikat janji dalam sebuah
+                momen tunangan yang penuh haru dan bahagia. Langkah itu menjadi
+                awal dari cerita yang lebih besar dan kini, kami bersiap
+                melangkah ke babak selanjutnya dengan penuh cinta dan harapan.
+              </p>
+            </div>
+            <div class="year-vertical-right">2023</div>
+          </div>
+          <div class="jurney-overlay">
+            <div class="year-vertical">2025</div>
+            <img src="img/j3.jpg" alt="Our First Meet" class="timeline-image" />
+            <div class="text-content">
+              <h3>New Chapter</h3>
+              <p class="date">Juni, 2025</p>
+              <p>
+                Setelah perjalanan yang penuh makna, kami percaya bahwa cinta
+                ini layak diperjuangkan dan dirayakan. Kini, dengan penuh rasa
+                syukur dan tawakal, kami akan melangkah ke jenjang yang lebih
+                sakral Ijab dan Qabul, sebagai bentuk ikhtiar menyempurnakan
+                separuh agama. Semoga Allah senantiasa membimbing langkah kami,
+                menjadikan rumah tangga ini sakinah, mawaddah, wa rahmah, serta
+                membawa keberkahan dunia dan akhirat.
+              </p>
+            </div>
+          </div>
+        </section>
+        <!-- gift -->
+
+        <section id="gift" class="py-16 bg-black/50 text-white rounded-2xl">
+          <div class="max-w-2xl mx-auto text-center px-4">
+            <h2 class="text-3xl font-bold mb-4">Kirim Hadiah</h2>
+            <p class="mb-8 text-white/80">
+              Kehadiran dan doa restu Anda sudah merupakan hadiah terbaik bagi
+              kami. Namun jika ingin memberikan tanda kasih, berikut informasi
+              yang dapat digunakan:
+            </p>
+
+            <div class="bg-black/80 shadow-md rounded-2xl p-6 mb-6">
+              <p class="font-semibold">Bank BCA</p>
+              <p
+                class="rekening text-xl font-bold tracking-wider"
+                id="rekening-bni"
+              >
+                3390741277
+              </p>
+              <p class="text-sm mb-2">a.n. SANDY FAISAL HARDIANA</p>
+              <button
+                class="copy-button text-sm bg-gray-500/30 hover:bg-gray-500/60 text-white py-1 px-3 rounded-xl mb-2 transition-all"
+                data-rekening="rekening-bni"
+              >
+                <i class="fas fa-copy mr-2"></i> Salin Nomor Rekening BCA
+              </button>
+            </div>
+
+            <div class="bg-black/80 shadow-md rounded-2xl p-6 mb-6">
+              <p class="font-semibold">Bank MANDIRI</p>
+              <p
+                class="rekening text-xl font-bold tracking-wider"
+                id="rekening-bca"
+              >
+                1770022403189
+              </p>
+              <p class="text-sm mb-2">a.n. NENDEN NURJANAH</p>
+              <button
+                class="copy-button text-sm bg-gray-500/30 hover:bg-gray-500/60 text-white py-1 px-3 rounded-xl mb-2 transition-all"
+                data-rekening="rekening-bca"
+              >
+                <i class="fas fa-copy mr-2"></i> Salin Nomor Rekening MANDIRI
+              </button>
+            </div>
+
+            <!-- Kirim Kado Fisik -->
+            <div class="bg-black/80 shadow-md rounded-2xl p-6 mb-6 text-left">
+              <h3 class="text-lg font-semibold text-center mb-2">
+                Alamat Pengiriman Kado
+              </h3>
+              <p id="alamat" class="alamat text-center leading-relaxed">
+                Kp. Ciakar Babakan, RT/RW 04/06,<br />
+                Desa. Mekarjaya, Kec.Bayongbong<br />
+                Kab. Garut, Kode Pos 44162
+              </p>
+              <div class="flex justify-center mt-4">
+                <button
+                  class="copy-button text-sm bg-gray-500/30 hover:bg-gray-500/60 text-white py-1 px-3 rounded-xl transition-all"
+                  data-rekening="alamat"
+                >
+                  <i class="fas fa-copy mr-2"></i> Salin Alamat
+                </button>
+              </div>
+            </div>
+
+            <p class="text-white text-sm mt-4">
+              Terima kasih atas perhatian dan doa Anda 💝
+            </p>
+          </div>
+        </section>
+
+        <!-- ucapan & RSVP -->
+
+        <section id="rsvp" class="py-16 bg-black/50 text-white w-full relative">
+          <div class="px-6 sm:px-10 md:px-20 lg:px-32 xl:px-40">
+            <div class="text-center mb-10">
+              <h2 class="text-4xl font-bold">Ucapan & Rsvp</h2>
+            </div>
+
+            <form
+              id="rsvpForm"
+              class="bg-black/40 p-8 rounded-2xl border border-white/30 space-y-6"
+            >
+              <input
+                type="text"
+                id="nama"
+                placeholder="Masukan nama"
+                class="w-full px-4 py-3 rounded-lg bg-transparent border border-white/30 text-white text-lg"
+                required
+              />
+              <textarea
+                id="ucapan"
+                rows="4"
+                placeholder="Ucapan & Doa"
+                class="w-full px-4 py-3 rounded-lg bg-transparent border border-white/30 text-white text-lg"
+                required
+              ></textarea>
+              <select
+                id="kehadiran"
+                class="w-full px-4 py-3 rounded-lg bg-transparent border border-white/30 text-white text-lg"
+              >
+                <option selected disabled>Konfirmasi Kehadiran</option>
+                <option>Hadir</option>
+                <option>Tidak Hadir</option>
+              </select>
+              <button
+                type="submit"
+                class="w-full bg-white text-black font-semibold text-lg py-3 rounded-lg"
+              >
+                Kirim Ucapan
+              </button>
+            </form>
+
+            <!-- Komentar -->
+            <div id="komentarList" class="mt-10 space-y-4"></div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Bride & Groom Section -->
+      <section class="bride-groom-section">
+        <h2 class="bride-groom-title">
+          <div>THANK</div>
+          <div class="gold">YOU</div>
+        </h2>
+      </section>
+
+      <!-- akhir -->
+      <section id="last" class="last">
+        <div class="last-sliding-background">
+          <div class="last-slide-track">
+            <img src="img/c1.jpg" alt="slide1" />
+            <img src="img/c2.jpg" alt="slide2" />
+            <img src="img/c3.jpg" alt="slide3" />
+            <img src="img/c4.jpg" alt="slide4" />
+
+            <img src="img/c1.jpg" alt="slide1" />
+            <img src="img/c2.jpg" alt="slide2" />
+            <img src="img/c3.jpg" alt="slide3" />
+            <img src="img/c4.jpg" alt="slide4" />
+          </div>
+        </div>
+        <div class="wedding-bottom">
+          <h1 class="wedding-name">SANDY & NENDEN</h1>
+          <hr class="full-line" />
+        </div>
+      </section>
+
+      <footer>
+        <div class="row">
+          <div class="col text-center">
+            <small class="d-block">
+              &copy; 2025 Sandy & Nenden Wedding. All Rights Reserved
+            </small>
+            <small class="d-block">
+              Design by
+              <a href="https://instagram.com/@heldiii.a" target="_blank">
+                @heldiii.a </a
+              >.
+            </small>
+            <ul class="mt-3 list-unstyled d-flex justify-content-center gap-3">
+              <li>
+                <a href="https://instagram.com/@heldiii.a" target="_blank">
+                  <i class="bi bi-instagram"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.tiktok.com/@yankee3308?_t=ZS-8w2lEPQM9ju&_r=1"
+                  target="_blank"
+                >
+                  <i class="bi bi-tiktok"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/heldiana.agustin.3"
+                  target="_blank"
+                >
+                  <i class="bi bi-facebook"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+
+    <!-- sound -->
+    <div id="audio-container">
+      <audio id="song" autoplay loop>
+        <source src="audio/komang.mp3" type="audio/mp3" />
+      </audio>
+
+      <div class="audio-icon-wrapper" style="display: none">
+        <i class="bi bi-disc"></i>
+      </div>
+    </div>
+    <!-- countdown -->
+    <script>
+      // Ganti dengan tanggal tujuan kamu
+      const targetDate = new Date("2025-06-15T09:00:00").getTime();
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = days;
+        document.getElementById("hours").textContent = hours;
+        document.getElementById("minutes").textContent = minutes;
+        document.getElementById("seconds").textContent = seconds;
+      }
+
+      setInterval(updateCountdown, 1000);
+      updateCountdown(); // Jalankan sekali saat pertama kali
+    </script>
+
+    <!-- hero no scroll -->
+    <script>
+      // Nonaktifkan pemulihan scroll otomatis oleh browser
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+
+      // Scroll ke atas sebelum unload (untuk backup)
+      window.addEventListener("beforeunload", function () {
+        window.scrollTo(0, 0);
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Kunci scroll saat awal
+        document.body.classList.add("no-scroll");
+
+        // Pastikan scroll tetap ke atas
+        window.scrollTo(0, 0);
+
+        const bukaBtn = document.querySelector("#bukaUndanganBtn");
+
+        bukaBtn.addEventListener("click", function () {
+          document.body.classList.remove("no-scroll");
+
+          // Scroll ke section isi undangan
+          document
+            .querySelector("#section-berikutnya")
+            .scrollIntoView({ behavior: "smooth" });
+        });
+      });
+    </script>
+    <!-- no scroll + play audio -->
+    <script>
+      const rootElement = document.querySelector(":root");
+      const audioIconWrapper = document.querySelector(".audio-icon-wrapper");
+      const audioIcon = document.querySelector(".audio-icon-wrapper i");
+      const song = document.querySelector("#song");
+      let isPlaying = false;
+
+      function disableScroll() {
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+        window.onscroll = function () {
+          window.scrollTo(scrollTop, scrollLeft);
+        };
+
+        rootElement.style.scrollBehavior = "auto";
+      }
+
+      function enableScroll() {
+        const hero = document.getElementById("hero");
+        const rootElement = document.documentElement;
+
+        // Menonaktifkan scroll pada halaman (mengunci scroll saat hero tampil)
+        rootElement.style.overflow = "hidden";
+
+        // Menambahkan kelas hide untuk menyembunyikan hero dengan animasi
+        hero.classList.add("hide");
+
+        // Mengaktifkan scroll kembali setelah hero menghilang
+        setTimeout(function () {
+          // Mengaktifkan scroll kembali setelah animasi selesai
+          rootElement.style.overflow = "auto"; // Mengaktifkan scroll
+
+          // Mengaktifkan smooth scroll ke bagian #home
+          rootElement.style.scrollBehavior = "smooth";
+          document
+            .getElementById("home")
+            .scrollIntoView({ behavior: "smooth" });
+
+          // Memutar audio setelah scroll selesai
+          playAudio();
+        }, 200); // Waktu animasi hero selesai
+      }
+
+      function playAudio() {
+        song.volume = 0.5;
+        audioIconWrapper.style.display = "flex";
+
+        song
+          .play()
+          .then(() => {
+            isPlaying = true;
+            console.log("Audio mulai diputar");
+          })
+          .catch((error) => {
+            console.error("Gagal memutar audio:", error);
+          });
+
+        song.onloadedmetadata = function () {
+          console.log("Durasi audio:", song.duration + " detik");
+        };
+
+        song.onended = function () {
+          console.log("Audio selesai");
+        };
+      }
+
+      audioIconWrapper.onclick = function () {
+        if (isPlaying) {
+          song.pause();
+          audioIcon.classList.remove("bi-disc");
+          audioIcon.classList.add("bi-pause-circle");
+        } else {
+          song.play();
+          audioIcon.classList.add("bi-disc");
+          audioIcon.classList.remove("bi-pause-circle");
+        }
+
+        isPlaying = !isPlaying;
+      };
+
+      //if (!localStorage.getItem("opened")) {
+      //disableScroll();
+      //}
+      // disableScroll();
+    </script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".mySwiper", {
+        loop: true,
+        loopedSlides: 8, // jumlah duplikat, sesuaikan
+        slidesPerView: "auto",
+        spaceBetween: 0,
+        speed: 5000, // makin tinggi makin halus
+        freeMode: true,
+        freeModeMomentum: false,
+        autoplay: {
+          delay: 0,
+          disableOnInteraction: false,
+        },
+      });
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.5/dist/index.bundle.min.js"></script>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const nama = urlParams.get("n") || "";
+      const pronoun = urlParams.get("p") || "Bapak/Ibu/Saudara/i";
+      const namaContainer = document.querySelector(".hero h4 span");
+      namaContainer.innerText = `${pronoun} ${nama},`.replace(/ ,$/, ",");
+
+      document.querySelector("#nama").value = nama;
+    </script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000, // durasi animasi (ms)
+        once: false, // animasi hanya muncul sekali saat scroll
+      });
+    </script>
+    <!-- slider groom -->
+    <script>
+      function setupLoopingSlider(
+        sectionId,
+        direction = "left",
+        duration = 30
+      ) {
+        const section = document.getElementById(sectionId);
+        const container = section.querySelector(".slider-container");
+        const slides = Array.from(container.children);
+
+        // Gandakan slide untuk loop mulus
+        slides.forEach((slide) => {
+          const clone = slide.cloneNode(true);
+          container.appendChild(clone);
+        });
+
+        container.style.display = "flex";
+        container.style.width = "max-content";
+        container.style.animation = `${sectionId}-scroll ${duration}s linear infinite`;
+      }
+
+      // Tambahkan animasi CSS secara dinamis
+      const style = document.createElement("style");
+      style.innerHTML = `
+    @keyframes slider-bride-scroll {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    @keyframes slider-groom-scroll {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+  `;
+      document.head.appendChild(style);
+
+      // // Inisialisasi saat halaman selesai dimuat
+      // window.addEventListener("DOMContentLoaded", () => {
+      //   setupLoopingSlider("slider-bride", "right", 30); // Ke kanan
+      //   setupLoopingSlider("slider-groom", "left", 30); // Ke kiri
+      // });
+    </script>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    <!-- gallery -->
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      });
+
+      document
+        .querySelectorAll(".fade-in")
+        .forEach((el) => observer.observe(el));
+    </script>
+
+    <script>
+      const galleryItems = document.querySelectorAll(".gallery-img"); // Pilih gambar-gambar galeri
+      const lightbox = document.getElementById("lightbox"); // Ambil lightbox
+      const lightboxImage = document.getElementById("lightbox-img"); // Ambil gambar di lightbox
+      const closeButton = document.querySelector(".close"); // Ambil tombol close
+      const prevButton = document.getElementById("prev"); // Ambil tombol prev
+      const nextButton = document.getElementById("next"); // Ambil tombol next
+      const caption = document.getElementById("lightbox-caption"); // Ambil caption
+
+      let currentIndex = 0; // Menyimpan indeks gambar yang sedang ditampilkan
+
+      // Fungsi untuk membuka lightbox dan menampilkan gambar yang diklik
+      galleryItems.forEach((item, index) => {
+        item.addEventListener("click", () => {
+          currentIndex = index; // Set current index ke gambar yang diklik
+          openLightbox();
+        });
+      });
+
+      // Fungsi untuk membuka lightbox
+      function openLightbox() {
+        lightbox.style.display = "flex"; // Menampilkan lightbox
+        lightboxImage.src = galleryItems[currentIndex].src; // Gambar di lightbox menampilkan gambar yang sesuai
+        caption.innerText = galleryItems[currentIndex].alt; // Menampilkan caption gambar
+      }
+
+      // Tutup lightbox saat tombol close diklik
+      closeButton.addEventListener("click", () => {
+        lightbox.style.display = "none"; // Menyembunyikan lightbox
+      });
+
+      // Fungsi untuk navigasi ke gambar sebelumnya
+      prevButton.addEventListener("click", () => {
+        currentIndex =
+          currentIndex === 0 ? galleryItems.length - 1 : currentIndex - 1; // Navigasi ke gambar sebelumnya
+        lightboxImage.src = galleryItems[currentIndex].src; // Perbarui gambar
+        caption.innerText = galleryItems[currentIndex].alt; // Perbarui caption
+      });
+
+      // Fungsi untuk navigasi ke gambar berikutnya
+      nextButton.addEventListener("click", () => {
+        currentIndex =
+          currentIndex === galleryItems.length - 1 ? 0 : currentIndex + 1; // Navigasi ke gambar berikutnya
+        lightboxImage.src = galleryItems[currentIndex].src; // Perbarui gambar
+        caption.innerText = galleryItems[currentIndex].alt; // Perbarui caption
+      });
+
+      // Tutup lightbox saat klik di luar gambar
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+          // Mengecek jika klik di luar gambar
+          lightbox.style.display = "none"; // Menyembunyikan lightbox
+          lightbox.classList.remove("show"); // Menghapus kelas 'show' untuk menghilangkan animasi
+        }
+      });
+    </script>
+
+    <!-- gift section -->
+    <script>
+      // Menambahkan event listener ke semua tombol "Salin"
+      document.querySelectorAll(".copy-button").forEach((button) => {
+        button.addEventListener("click", function () {
+          let textToCopy = "";
+
+          // Cek tombol mana yang ditekan (rekening bank atau alamat)
+          const rekeningId = this.getAttribute("data-rekening");
+
+          // Menyalin nomor rekening bank BCA
+          if (rekeningId === "rekening-bca") {
+            textToCopy = document.getElementById("rekening-bca").textContent;
+          }
+          // Menyalin nomor rekening bank BNI
+          else if (rekeningId === "rekening-bni") {
+            textToCopy = document.getElementById("rekening-bni").textContent;
+          }
+          // Menyalin nomor e-wallet
+          else if (rekeningId === "ewallet") {
+            textToCopy = document.getElementById("ewallet").textContent;
+          }
+          // Menyalin alamat pengiriman kado
+          else if (rekeningId === "alamat") {
+            textToCopy = document.getElementById("alamat").textContent;
+          }
+
+          // Menyalin teks ke clipboard
+          navigator.clipboard
+            .writeText(textToCopy)
+            .then(() => {
+              const originalText = this.innerText;
+              this.innerText = "Berhasil Disalin"; // Ganti teks tombol
+
+              this.disabled = true; // Nonaktifkan sementara tombol
+              setTimeout(() => {
+                this.innerText = originalText; // Kembalikan teks tombol setelah 2 detik
+                this.disabled = false; // Aktifkan kembali tombol
+              }, 2000);
+            })
+            .catch((err) => {
+              console.error("Tidak dapat menyalin teks: ", err);
+            });
+        });
+      });
+    </script>
+
+    <!-- ucapan & RSVP -->
+
+    <script>
+      const scriptURL = document
+        .getElementById("rsvpForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const data = {
+            nama: document.getElementById("nama").value.trim(),
+            ucapan: document.getElementById("ucapan").value.trim(),
+            kehadiran: document.getElementById("kehadiran").value,
+          };
+
+          const res = await fetch(scriptURL, {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+
+          if (res.ok) {
+            loadKomentar(); // tampilkan komentar
+            this.reset();
+          }
+        });
+
+      async function loadKomentar() {
+        const res = await fetch(scriptURL);
+        const data = await res.json();
+
+        const komentarList = document.getElementById("komentarList");
+        komentarList.innerHTML = "";
+
+        data.reverse().forEach((k) => {
+          const div = document.createElement("div");
+          div.className = "bg-black/30 p-4 rounded-lg border border-white/20";
+          div.innerHTML = `
+      <p class="font-semibold">${k.nama}</p>
+      <p class="text-white/80">${k.ucapan}</p>
+      <p class="text-sm text-white/50 italic">Kehadiran: ${k.kehadiran}</p>
+    `;
+          komentarList.appendChild(div);
+        });
+      }
+
+      // Panggil saat load
+      loadKomentar();
+    </script>
+    <!-- loading screen -->
+    <script>
+      window.addEventListener("load", function () {
+        const loading = document.getElementById("loading-screen");
+        const content = document.getElementById("main-content");
+        const progressBar = document.getElementById("progress-bar");
+        const progressText = document.getElementById("progress-text");
+
+        let percent = 1;
+        const duration = 5000;
+        const steps = 100;
+        const intervalTime = duration / steps;
+
+        const interval = setInterval(() => {
+          progressBar.style.width = percent + "%";
+          progressText.textContent = percent + "%";
+          percent++;
+
+          if (percent > 100) {
+            clearInterval(interval);
+            void loading.offsetWidth; // paksa reflow
+            loading.classList.add("fade-out");
+
+            setTimeout(() => {
+              loading.style.display = "none";
+
+              // Tampilkan konten (belum fade in)
+              content.style.display = "block";
+
+              // Gunakan dua frame: pastikan browser update layout dulu
+              requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                  content.style.opacity = "1";
+                });
+              });
+            }, 1000);
+          }
+        }, intervalTime);
+      });
+    </script>
+    <!-- Tambahkan ini di bawah script lain atau sebelum </body> -->
+    <script>
+      const SHEET_URL =
+        "https://script.google.com/macros/s/AKfycbzBtGjBYS3eKzD13ZYPuM6YyoNtHrFttPdsCIG3QEgKdlyCuYLwAh-4jI9Edf30pM2QBA/exec";
+      document
+        .getElementById("rsvpForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const nama = document.getElementById("nama").value.trim();
+          const ucapan = document.getElementById("ucapan").value.trim();
+          const kehadiran = document.getElementById("kehadiran").value;
+
+          if (!nama || !ucapan || !kehadiran) {
+            alert("Mohon lengkapi semua kolom sebelum mengirim.");
+            return;
+          }
+
+          const formData = new FormData();
+          formData.append("nama", nama);
+          formData.append("ucapan", ucapan);
+          formData.append("kehadiran", kehadiran);
+
+          try {
+            const res = await fetch(scriptURL, {
+              method: "POST",
+              body: formData,
+            });
+
+            if (res.ok) {
+              alert("Terima kasih atas ucapan dan konfirmasinya!");
+              document.getElementById("rsvpForm").reset();
+            } else {
+              alert("Gagal mengirim data. Coba lagi nanti.");
+            }
+          } catch (err) {
+            console.error("Error:", err);
+            alert("Terjadi kesalahan koneksi. Periksa jaringan Anda.");
+          }
+        });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("rsvpForm");
+        const komentarList = document.getElementById("komentarList");
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault(); // Hindari reload
+
+          const nama = document.getElementById("nama").value.trim();
+          const ucapan = document.getElementById("ucapan").value.trim();
+          const kehadiran = document.getElementById("kehadiran").value;
+
+          if (!nama || !ucapan || !kehadiran) {
+            alert("Mohon lengkapi semua kolom.");
+            return;
+          }
+
+          const komentarItem = document.createElement("div");
+          komentarItem.classList.add(
+            "bg-white",
+            "text-black",
+            "p-4",
+            "rounded-lg",
+            "shadow-md"
+          );
+
+          komentarItem.innerHTML = `
+        <strong>${nama}</strong> (${kehadiran})<br/>
+        <p>${ucapan}</p>
+      `;
+
+          komentarList.prepend(komentarItem);
+
+          // Reset form
+          form.reset();
+        });
+      });
+    </script>
+  </body>
+</html>
